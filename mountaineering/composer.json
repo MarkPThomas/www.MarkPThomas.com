@@ -1,0 +1,41 @@
+{
+    "name": "mark",
+    "description" : "Personal website, which includes various custom CMS systems for mountaineering.",
+    "version": "1.0.0",
+    "license": "MIT",
+    "keywords": ["login", "auth", "user", "authentication", "mvc", "membership", "mountaineering"],
+    "require": {
+        "php": ">=5.5.0",
+        "phpmailer/phpmailer": "^5.2",
+        "pusher/pusher-php-server": "^3.0",
+        "gregwar/captcha": "~1.1",
+        "phpunit/phpunit": "4.8.*|5.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "markpthomas\\mountaineering\\": ["application/core/", "application/model/"],
+            "markpthomas\\library\\": "application/core/lib/",
+            "markpthomas\\crawler\\": "application/core/crawler/",
+            "markpthomas\\mountaineering\\dbObjects\\": "application/core/dbObjects/",
+            "Gregwar\\Captcha\\": "vendor/gregwar/captcha/src/Gregwar/Captcha"}
+    },
+    "homepage" : "http://www.markpthomas.com/mountaineering",
+    "authors": [
+        {
+            "name": "Mark Thomas",
+            "email": "markpthomas@gmail.com",
+            "homepage" : "http://www.markpthomas.com",
+            "role": "Developer"
+        }
+    ],
+    "Support" :
+        {
+            "email": "support email",
+            "issues": "URL to issue tracker",
+            "forum": "URL to forum",
+            "wiki": "URL to wiki",
+            "source": "URL to browse or download the sources",
+            "docs": "URL to the documentation"
+        }
+
+}

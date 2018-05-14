@@ -1,0 +1,50 @@
+    private function lastItem(array &$array){
+        return array_values(array_slice($array, -1))[0];
+    }
+    
+    /**
+     * Returns only the text for the tag elements (no attributes, tag names, etc.).
+     * This includes returning child element text.
+     * @param int $i Index for the starting character of the tag.
+     * @param string $content Content to search.
+     * @return string The text for the tag elements (no attributes, tag names, etc.).
+     * This includes returning child element text.
+     */
+    private function getTagContentsOnly($i, $content){
+        // Exit if the index is not at the start of a tag
+        if ($content[$i] !== '<') return '';
+
+        $contentLength = strlen($content);
+        $tagBalance = 1;
+        $isInTag = false;
+        $stringToCheck = '/';
+        $stringToCheckLength = strlen($stringToCheck);
+        $headerContent = '';
+        do {
+            $currentMaxJ = $i + $stringToCheckLength;
+
+            if ($content[$i] === '<' &&
+                $currentMaxJ < $contentLength &&
+                $content[$currentMaxJ] !== $stringToCheck){
+                // Entering opening tag
+                $tagBalance++;
+                $isInTag = true;
+            } elseif ($content[$i] === '<' &&
+                $currentMaxJ < $contentLength &&
+                $content[$currentMaxJ] === $stringToCheck){
+                // Entering closing tag
+                $tagBalance--;
+                $isInTag = true;
+            } elseif ($content[$i] === '>'){
+                // Leaving tag
+                $isInTag = false;
+            }
+
+            // Records all text that is not within a tag
+            if (!$isInTag && $tagBalance === 1 && $content[$i] !== '>'){
+                $headerContent .= $content[$i];
+            }
+            $i++;
+        } while (!($tagBalance === 0 && !$isInTag) && $i < $contentLength);
+        return $headerContent;
+    }

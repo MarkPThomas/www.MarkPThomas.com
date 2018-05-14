@@ -1,0 +1,42 @@
+# Necessary to prevent problems when using a controller named "index" and having a root index.php
+# See: http://httpd.apache.org/docs/2.2/content-negotiation.html
+# The effect of MultiViews is as follows:
+#    if the server receives a request for /some/dir/foo, if /some/dir has MultiViews enabled, and /some/dir/foo does not exist,
+#    then the server reads the directory looking for files named foo.*, and effectively fakes up a type map which names all
+#    those files, assigning them the same media types and content-encodings it would have if the client had asked for one of them by name.
+# It then chooses the best match to the client's requirements.
+Options -MultiViews
+
+# Activates URL rewriting (like myproject.com/controller/action/1/2/3)
+RewriteEngine On
+
+# Disallows others to look directly into /public/ folder
+# See: http://publib.boulder.ibm.com/httpserv/manual60/mod/core.html#options
+# If a URL which maps to a directory is requested, and there is no DirectoryIndex (e.g., index.html) in that directory,
+#    then mod_autoindex will return a formatted listing of the directory.
+# See: https://stackoverflow.com/questions/15837822/what-is-the-htaccess-options-indexes-for
+# The Indexes option sets whether you can "browse" the directory or not.
+# If indexes is set to plus, and the directory has no index.html or index.php (of whatever) file, it will show the contents of the
+#    directory just like your filemanager would do.
+Options -Indexes
+
+# When using the script within a sub-folder, put this path here, like /mysubfolder/
+# If your app is in the root of your web folder, then leave it commented out
+# Modified below due to differences in root folder level on server vs. localhost
+RewriteBase /engineering/
+
+# General rewrite rules
+# See: https://gist.github.com/RaVbaker/2254618
+# RewriteCond basically means "execute the next RewriteRule only if this is true".
+# Means that if the file with the specified name in the browser doesn't exist then proceed to the rewrite rule below.
+RewriteCond %{REQUEST_FILENAME} !-d
+# Means that if the directory in the browser doesn't exist then proceed to the rewrite rule below.
+RewriteCond %{REQUEST_FILENAME} !-f
+# Means that a link doesn't exist then proceed to the rewrite rule below.
+RewriteCond %{REQUEST_FILENAME} !-l
+
+# If the request is done that matches ^(.+)$ (matches any URL except the server root), it will be rewritten as specified (in this case, index.php?url=$1
+#    which means a request for 'olle' will be rewritten as 'index.php?url=olle').
+# QSA means that if there's a query string passed with the original URL, it will be appended to the rewrite (?url=olle&p=1) will be rewritten as index.php?url=olle&p=1.
+# L means if the rule matches, don't process any more RewriteRules below this one.
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

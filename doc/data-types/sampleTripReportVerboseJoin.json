@@ -1,0 +1,198 @@
+// JSON               (raw data from tables, with minimal joins for representing the object.)
+// JSON Verbose       (replaces IDs with values for enums)
+// JSON VerboseLists  (replaces IDs with values for enums and lists) (not sure about including this one)
+// JSON Join          (replaces most ID references with the actual sub-objects, except for enums and lists)
+
+// Trip Report displays use JSON Join Verbose
+// Trip Report writing use JSON Join
+// Trip Report editing use JSON ?
+
+// JSON Verbose Join
+{
+  "header": {
+    "report_trip_id": ,
+    "report_trip_type": (enum id),
+    "status": (enum id),
+    "page" : {
+        "id": ,
+        "title_menu": ,
+        "title_full": ,
+        "description": ,
+        "url": ,
+        "photo": {
+            "id": ,
+            "album_id": ,
+            "url": ,
+            "caption": ,
+            "width": ,
+            "height": ,
+            "latitude": ,
+            "longitude": ,
+            "time_stamp": ,
+            "is_public": ,
+            "file_name": ,
+            "url_piwigo": ,
+            "url_picasa": ,
+        }
+        "date_created": ,
+        "date_modified": ,
+        "status": (enum id),
+        "tasks": ,
+        "views_count": ,
+        "user_id": ,
+        "is_public": ,
+    }, 
+  },
+  "body": [
+    {
+        "sequence": ,
+        "header_type": (enum id),
+        "header_value":
+        "text_body":
+        "report_photo": {
+          "id": ,
+          "suppress_caption": ,
+          "custom_caption": ,
+          "photo": {
+              "id": ,
+              "album_id": ,
+              "url": ,
+              "caption": ,
+              "width": ,
+              "height": ,
+              "latitude": ,
+              "longitude": ,
+              "time_stamp": ,
+              "is_public": ,
+              "file_name": ,
+              "url_piwigo": ,
+              "url_picasa": ,
+          },
+        },
+        "report_video": {
+          "id": ,
+          "suppress_caption": ,
+          "custom_caption": ,
+          "video": {
+              "id": ,
+              "album_id": ,
+              "url": ,
+              "caption": ,
+              "width": ,
+              "height": ,
+              "latitude": ,
+              "longitude": ,
+              "time_stamp": ,
+              "is_public": ,
+              "id_youtube": ,
+              "id_vimeo": ,
+              "url_piwigo": ,
+          }
+        },
+    }, ...
+  ],
+  "albums": [
+    {
+      "id": ,
+      "url": ,
+      "title": ,
+      "summary": ,
+      "latitude": ,
+      "longitude": ,
+      "date": ,
+      "status": (enum id),
+      "captions_status": (enum id),
+      "geotag_status": (enum id),
+      "is_public": ,
+      "url_piwigo": ,
+      "url_picasa": ,
+    }, ...
+  ],
+  "internalLinks": [
+    {
+      --- Same as references ---
+    }, ...
+  ],
+  "externalLinks": [
+    {
+      --- Same as references ---
+    }, ...
+  ],
+  "references": [
+    {
+      "id": ,
+      "name": ,
+      "description": ,
+      "website_URL": ,
+      "book_title": ,
+      "book_author": ,
+      "book_URL": ,
+      "status": (enum id),
+      "private_file_URL": ,
+      "is_public": ,
+    }, ...
+  ]
+}
+
+
+"page" : {
+    "id": ,
+    "title_menu": ,
+    "title_full": ,
+    "description": ,
+    "url": ,
+    "photo_id": (Join: substitute "photo":{}),
+    "date_created": ,
+    "date_modified": ,
+    "status": (enum id),
+    "tasks": ,
+    "views_count": ,
+    "user_id": ,
+    "is_public": ,
+}
+ 
+"report_photo": {
+  "id": ,
+  "suppress_caption": ,
+  "custom_caption": ,
+  "photo_id": (Join: substitute "photo":{}),
+}
+
+"report_video": {
+  "id": ,
+  "suppress_caption": ,
+  "custom_caption": ,
+  "video_id": (Join: substitute "video":{}),
+}
+ 
+"photo": {
+    "id": ,
+    "album_id": ,
+    "url": ,
+    "caption": ,
+    "width": ,
+    "height": ,
+    "latitude": ,
+    "longitude": ,
+    "time_stamp": ,
+    "is_public": ,
+    "file_name": ,
+    "url_piwigo": ,
+    "url_picasa": ,
+}
+
+"video": {
+    "id": ,
+    "album_id": ,
+    "url": ,
+    "caption": ,
+    "width": ,
+    "height": ,
+    "latitude": ,
+    "longitude": ,
+    "time_stamp": ,
+    "is_public": ,
+    "id_youtube": ,
+    "id_vimeo": ,
+    "url_piwigo": ,
+}

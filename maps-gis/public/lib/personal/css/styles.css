@@ -1,0 +1,160 @@
+.pager li .active_link {
+    background: #F0E68C !important; /* !important overrides all; */
+    font-weight: bold !important;
+}
+
+/* hr */
+hr.hr-thick{
+    border-top: 1px solid #8c8b8b;
+}
+
+hr.hr-inset {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+
+hr.hr-gradient {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+hr.hr-double {
+    border-top: 3px double #8c8b8b;
+}
+
+hr.hr-dashed {
+    border-top: 1px dashed #8c8b8b;
+}
+
+hr.hr-dotted {
+    border-top: 1px dotted #8c8b8b;
+}
+
+hr.hr-dashed-large {
+    background-color: #fff;
+    border-top: 2px dashed #8c8b8b;
+}
+
+
+hr.hr-dotted-large {
+    background-color: #fff;
+    border-top: 2px dotted #8c8b8b;
+}
+
+hr.hr-scissors {
+    border-top: 1px dashed #8c8b8b;
+}
+hr.hr-scissors:after {
+    content: '\002702';
+    display: inline-block;
+    position: relative;
+    top: -12px;
+    left: 40px;
+    padding: 0 3px;
+    background: #f0f0f0;
+    color: #8c8b8b;
+    font-size: 18px;
+}
+
+/* Trip Report Elements k*/
+.imageGroup, .videoGroup {
+    padding: 20px;
+    margin: 10px;
+}
+
+.imageSrc {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.videoSrc {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.myIframe {
+    width: 100%;
+    height: 100%;
+}
+
+.caption {
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.note {
+    display: block;
+    font-size: 11px;
+    color: #999;
+}
+
+.iconBtn {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.rounded {
+    border-radius: 24px;
+    height: 48px;
+}
+
+.rounded-left {
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    height: 48px;
+}
+
+.rounded-right {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    height: 48px;
+}
+
+.user-options {
+    color: #afafaf;
+    background-color: #3e3e3e;
+    border-color: #5f5f5f;
+}
+
+
+.user-options:hover,
+.user-options:active,
+.user-options:focus,
+.btn-default:focus,
+.open>.dropdown-toggle.btn-default:hover,
+.open>.dropdown-toggle.btn-default:active,
+.open>.dropdown-toggle.btn-default:focus {
+    color: #fff;
+    background-color: #5a5a5a;
+    border-color: #000000;
+}
+
+
+.table-responsive
+{
+    overflow-x: auto;
+    border: 1px solid #dddddd;
+}
+
+.table-responsive td, .table-responsive th
+{
+    white-space:nowrap;
+}
+
+/*
+Generic Styling, for Desktops/Laptops
+*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}

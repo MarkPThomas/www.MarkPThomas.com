@@ -1,0 +1,179 @@
+.my-div-icon {
+  color: white;
+  text-align:center;
+  font-family:"Arial Black", Gadget, sans-serif;  
+  font-size:20px;
+  line-height:20px;
+  font-weight: 900; 
+  text-shadow: 3px 3px 5px black;
+  display: none;
+}
+
+.my-div-icon-far {
+  color: white;
+  text-align:center;
+  font-family:"Arial Black", Gadget, sans-serif;  
+  font-size:10px;
+  line-height:10px;
+  font-weight: 900;
+  text-shadow: 3px 3px 5px black;
+  display: inline;
+}
+
+.my-div-rating-icon {
+  color: yellow;
+  text-align:center;
+  font-family:"Arial Black", Gadget, sans-serif;  
+  font-size:15px;
+  line-height:15px;
+  font-weight: 900; 
+  text-shadow: 3px 3px 5px black;
+  display: none; 
+}
+
+#start {
+  position: absolute;
+  right: 210px;
+  bottom: 4px;
+  font-size: 10px;
+  z-index: 2000;
+ }
+ 
+ #editor {
+  position: relative;
+  font-size: 10px;
+ }
+ 
+#editorOutput {
+  /*display:inline-block; */
+  background: #ffffcc;
+  padding: 6px;
+  border:1px solid gray;
+  border-radius:10px;
+  box-shadow: 5px 5px 5px #888888;
+  display: none;
+}
+ 
+#getPoints{
+  display:block;
+  box-shadow: 2px 2px 5px #888888;
+}
+ 
+#textArea{
+  display:block;
+}
+ 
+#imgLargeDiv {
+  display:flex; 
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  z-index:3000;
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  /* background: rgba(0, 0, 0, 0.5); /*transparent black div. Maybe use for welcome div? */
+  box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+  overflow: hidden;
+  font-size:20px; 
+  text-align: center;
+  display: none;
+}
+ 
+#imgLargeCaption {
+  position: relative;
+  bottom: 0px;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+  font-family:"Arial", Gadget, sans-serif;  
+  font-size:10px;
+  line-height: 12px;
+}
+ 
+#closeDiv {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 2px 0 0; /*original is 4px, 4px 0 0 */
+  text-align: center;
+  width: 18px;
+  height: 14px;
+  font: 16px/14px Tahoma, Verdana, sans-serif;
+  color: #c3c3c3;
+  text-decoration: none;
+  font-weight: bold;
+  background: transparent;
+}
+  
+#closeDiv:hover {
+  color: #999;
+}
+
+.specialBold {
+  color: #ff9999;
+  font-family: "Trebuchet MS", Gadget, sans-serif;
+  font-weight: 900; 
+}
+
+.global {
+  /*font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;*/
+  font-family: "Arial", Gadget, sans-serif;
+  font-size: 1 em;
+}
+
+
+#master {
+    border: 1px solid gray;
+    width: 1050px;
+}
+
+#banner {
+    background: url(../public/images/Banner.jpg);
+    height:183px;
+    background-size:1050px 183px;
+    background-repeat:no-repeat;
+    overflow: hidden;
+}
+
+#pageBound {
+  width: 1025px;
+  padding: 12px;
+}
+
+#map {
+    height: 512px;
+    width: 1024px;
+}
+
+
+h1 {
+  position: absolute;
+  color: white;
+  font-family: "Trebuchet MS", Gadget, sans-serif;
+  font-weight: 900;
+  font-size: 40px;  
+  text-shadow: 3px 3px 5px black;
+}
+
+.firstLetter{
+  font-weight: 900;
+  font-size: 30px;  
+}
+
+a:hover {
+  color: blue;
+  font-weight: 700;
+}
+
+.hr {
+  position: relative;
+  top: -15px;
+  border:1px solid #666666;
+  width: 90%;
+  box-shadow: 2px 2px 3px #888888;
+}

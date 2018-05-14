@@ -1,0 +1,14 @@
+<?php namespace markpthomas\mountaineering; ?>
+<div class="col-md-9">
+    <h1 class="page-header">Trip Reports</h1>
+    Select trip report by region:
+    <?php if (!empty($this->categories)) { ?>
+    <ul>
+        <?php foreach($this->categories as $cat_id => $category_title){ ?>
+        <li>
+            <a href="<?php echo Config::get('URL') . "trip-reports/" . $cat_id ?>"><?php echo $category_title ?></a>
+        </li>
+        <?php } ?>
+    </ul>
+    <?php } ?>
+</div>

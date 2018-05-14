@@ -1,0 +1,55 @@
+# Highest level directories only
+/_archive
+/_serverNotes
+/_mysqlDump
+/_JIRA & Confluence
+/files/apps
+/development
+/fonts
+/icons
+/images
+/photos
+/python
+/crawlers
+/cgi-bin
+/sandbox
+
+# Any directory matches
+#config/ #probably OK now, as long as the file below is excluded:
+config.production.php
+files/
+devel/
+plugins/
+map_tiles/
+*/public/crawler/
+*/public/projects-data
+.idea/
+
+# don't commit all the dependencies fetched via Composer
+vendor/
+
+# Any file of the types
+*.tar.gz
+*.tgz
+*.org
+*.zip
+*.min.js
+*.log
+*.sh
+*.url
+*.lnk
+*.psd
+*.pdf
+
+# Any files with the following patterns
+.DS_Store
+.tern-*
+
+TAGS
+settings.json
+notes.txt
+TODO.txt
+placeholder.jpg
+sitemap.xml
+composer.lock
+composer.phar
