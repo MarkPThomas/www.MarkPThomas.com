@@ -243,69 +243,6 @@ class PageModel {
     }
 
 
-    /**
-     * Gets the page report data, tailored for trip report views, based on the page ID.
-     * @param int $pageId
-     * @return mixed|null
-     */
-    public static function getReportPageById($pageId){
-        $database = DatabaseFactory::getFactory()->getConnection();
-
-        $sql = 'SELECT
-                    r.id as report_trip_id,
-                    r.page_id,
-                    r_status.name AS report_status,
-                    r_type.name AS report_trip_type,
-                    p.title_menu,
-                    p.title_full,
-                    p.description,
-                    p.url,
-                    photo.url AS photo_url,
-                    photo.caption AS photo_caption,
-                    p.date_created,
-                    p_status.name AS page_status,
-                    p.tasks,
-                    p.is_public,
-                    p.views_count,
-                    p.user_id
-                FROM
-                    report_trip r
-                    LEFT JOIN page p ON (r.page_id = p.id)
-                    LEFT JOIN photo ON (p.photo_id = photo.id)
-                    LEFT JOIN report_trip_type r_type ON (r.report_trip_type_id = r_type.id)
-                    LEFT JOIN status r_status ON (r.status_id = r_status.id)
-                    LEFT JOIN status p_status ON (p.status_id = p_status.id)
-                WHERE r.page_id = :pageId';
-        $query = $database->prepare($sql);
-        $query->execute([':pageId' => $pageId]);
-
-        $result = null;
-        if ($query->rowCount() === 1){
-            $result = $query->fetch();
-        }
-
-        // Abort if the page is private
-        return (Privacy::enforcePrivacyStd($result));
-    }
-
-    /**
-     * Returns the photo ID associated with the page.
-     * @param int $pageId
-     * @return int|null
-     */
-    public static function getPagePhotoId($pageId){
-        $database = DatabaseFactory::getFactory()->getConnection();
-
-        $sql = 'SELECT photo_id
-                FROM page
-                WHERE id = :pageId';
-
-        $query = $database->prepare($sql);
-        $query->execute([':pageId' => $pageId]);
-
-        return $query->fetch();
-    }
-
     // =============== Update ===============
 
 
