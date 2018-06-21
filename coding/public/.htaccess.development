@@ -23,8 +23,7 @@ Options -Indexes
 # When using the script within a sub-folder, put this path here, like /mysubfolder/
 # If your app is in the root of your web folder, then leave it commented out
 # Modified below due to differences in root folder level on server vs. localhost
-#RewriteBase /markpthomas/coding/
-#RewriteBase /markpthomas/
+RewriteBase /wamp_remote/markpthomas/coding
 
 # General rewrite rules
 # See: https://gist.github.com/RaVbaker/2254618
