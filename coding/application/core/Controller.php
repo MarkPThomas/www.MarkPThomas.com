@@ -31,8 +31,8 @@ class Controller
         }
 
         // Get data for navigation
-        $dataNavigation['navCategories'] = TripReportsModel::$blogCategories;
-        $dataNavigation['sidebarCategories'] = TripReportsModel::$reportCategories;
+        $dataNavigation['navCategories'] = ['projects' => 'Projects']; //TripReportsModel::$blogCategories; // TODO: Update for coding
+        $dataNavigation['sidebarCategories'] = []; //TripReportsModel::$reportCategories; // TODO: Update for coding
 
         // create a view object to be able to use it inside a controller, like $this->View->render();
         $this->View = new View($dataNavigation, $hasSideBar);
