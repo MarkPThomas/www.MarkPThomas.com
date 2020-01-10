@@ -152,7 +152,7 @@ class UserController extends Controller
         );
 
         if($result)
-            Redirect::to('user/index');
+            Redirect::to('user');
         else
             Redirect::to('user/changePassword');
     }

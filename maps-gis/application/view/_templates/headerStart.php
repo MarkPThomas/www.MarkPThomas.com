@@ -12,6 +12,9 @@
         gtag('config', 'UA-114940440-1');
     </script>
 
+    <!-- reCAPTCHA widget -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -30,6 +30,6 @@ class ContactController extends Controller
     {
         ContactModel::contactAdmin();
 
-        Redirect::to('contact/index');
+        Redirect::to('contact');
     }
 } 

@@ -165,3 +165,29 @@ table {
     background-color: #5a5a5a;
     border-color: #000000;
 }
+
+/* CSS for Picasa TR Generator*/
+.previewAlbum {
+    float: left;
+    padding:30px 28px 30px 28px;
+    width:200px;
+    height:300px;
+}
+
+.thumb {
+    display: block;
+    float:left;
+    padding: 0 15px 0 0;
+    margin: 10px 10px 10px 10px;
+    /*width:300px;*/
+    height: 144px;
+}
+
+.imgSelected {
+    border: 2px solid red;
+}
+
+.button {
+    vertical-align:top;
+    float:left;
+}

@@ -23,6 +23,7 @@ class ContactController extends Controller
      */
     public function index()
     {
+//        $this->View->render('contact');
         $this->View->render('contact/index');
     }
 
@@ -30,6 +31,6 @@ class ContactController extends Controller
     {
         ContactModel::contactAdmin();
 
-        Redirect::to('contact/index');
+        Redirect::to('contact');
     }
 } 

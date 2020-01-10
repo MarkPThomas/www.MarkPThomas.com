@@ -2,31 +2,43 @@
  * Created by Mark on 2/28/18.
  */
 
-$(document).ready(function(){
-    checkboxSliderEvent();
-    checkboxEvent();
-    selectionEvent();
-    selectionFuelUxEvent();
-    spinBoxFuelUxEvent();
-    checkAllCheckboxEvent();
-    deleteModalFormEvent();
-    iFrameDynamicSize();
-});
+function selectImageEvent(){
+    $('.thumb').click(function(){
+        // $(this).toggleClass('imgSelected');
+        $(this).find('img').toggleClass('imgSelected');
 
+        if($(this).find('input').attr('value') === '0') {
+            $(this).find('input').attr('value', '1');
+        }
+        else {
+            $(this).find('input').attr('value', '0');
+        }
+    });
+
+    // $('.thumb').click(function(){
+    //     this.toggleClass('imgSelected');
+    //     if(this.find('input').attr('value') === '0') {
+    //         this.find('input').attr('value', '1');
+    //     }
+    //     else {
+    //         this.find('input').attr('value', '0');
+    //     }
+    // });
+}
 
 function iFrameDynamicSize(){
     // See: https://stackoverflow.com/questions/838137/jquery-change-height-based-on-browser-size-resize
-
-    //jQuery.event.add(window, "load", resizeFrame);
-    //jQuery.event.add(window, "resize", resizeFrame);
-    $(window).resize(resizeFrame).resize();
 
     function resizeFrame()
     {
         var h = $(window).height();
         var w = $(window).width();
-        $(".myIframe").css('height',(h < 768 || w < 1024) ? 500 : 400);
+        $('.myIframe').css('height',(h < 768 || w < 1024) ? 500 : 400);
     }
+
+    //jQuery.event.add(window, "load", resizeFrame);
+    //jQuery.event.add(window, "resize", resizeFrame);
+    $(window).resize(resizeFrame).resize();
 
     // See: https://stackoverflow.com/questions/7317781/how-to-set-iframe-size-dynamically
     //$('.myIframe').css('height', $(window).height()+'px');
@@ -49,12 +61,15 @@ function checkboxSliderEvent(){
         $.ajax({
             url: url,
             type: 'post',
-            data: {"currentValue": currentValue,
-                   "targetId" : targetId}
+            data: {'currentValue': currentValue,
+                'targetId': targetId}
         });
-    })
+    });
 }
 
+/**
+ *
+ */
 function checkboxEvent(){
     $('.checkBoxes-dynamic').change(function() {
         var currentValue = $(this).prop('checked');
@@ -67,10 +82,10 @@ function checkboxEvent(){
         $.ajax({
             url: url,
             type: 'post',
-            data: {"currentValue": currentValue,
-                   "targetId" : targetId}
+            data: {'currentValue': currentValue,
+                'targetId': targetId}
         });
-    })
+    });
 }
 
 /**
@@ -103,10 +118,10 @@ function selectionEvent(){
         $.ajax({
             url: url,
             type: 'post',
-            data: {"currentValue": targetValue,
-                   "targetId" : targetId}
+            data: {'currentValue': targetValue,
+                'targetId': targetId}
         });
-    })
+    });
 }
 
 function selectionFuelUxEvent(){
@@ -123,10 +138,10 @@ function selectionFuelUxEvent(){
         $.ajax({
             url: url,
             type: 'post',
-            data: {"currentValue": targetValue,
-                "targetId" : targetId}
+            data: {'currentValue': targetValue,
+                'targetId': targetId}
         });
-    })
+    });
 }
 
 function spinBoxFuelUxEvent(){
@@ -140,10 +155,10 @@ function spinBoxFuelUxEvent(){
         $.ajax({
             url: url,
             type: 'post',
-            data: {"currentValue": currentValue,
-                "targetId" : targetId}
+            data: {'currentValue': currentValue,
+                'targetId': targetId}
         });
-    })
+    });
 }
 
 
@@ -169,3 +184,17 @@ function deleteModalFormEvent(){
         }
     });
 }
+
+
+
+$(document).ready(function(){
+    checkboxSliderEvent();
+    checkboxEvent();
+    selectionEvent();
+    selectionFuelUxEvent();
+    spinBoxFuelUxEvent();
+    checkAllCheckboxEvent();
+    deleteModalFormEvent();
+    iFrameDynamicSize();
+    selectImageEvent();
+});

@@ -18,6 +18,7 @@ class Trip_ReportsController extends ControllerReport
         $this->topicDirectory = 'trip-reports';
     }
 
+
     public function index()
     {
         $fileName = Lib\PathHelper::Combine([$this->topicDirectory, 'index'], $isRoot = false);
@@ -68,5 +69,59 @@ class Trip_ReportsController extends ControllerReport
     public function wyoming($reportName = null, $subReportName = null)
     {
         $this->renderPage('wyoming', $reportName, $subReportName);
+    }
+
+    public function viewAlbums()
+    {
+        $this->View->render($this->topicDirectory . '/viewAlbums', ['albums' => PiwigoModel::getAlbums()]);
+    }
+
+    public function album($album_id)
+    {
+        $album = PiwigoModel::getAlbum($album_id);
+        $this->View->render($this->topicDirectory . '/album',
+            [
+                'album_id' => $album_id,
+                'album_title' => $album->title,
+                'photos' => PiwigoModel::getAlbumPhotos($album_id)
+            ]);
+    }
+
+    public function createReport()
+    {
+        $album_id 	= Request::post("album_id");
+
+        $album = PiwigoModel::getAlbum($album_id);
+        $comment = $album? $album->comment : null;
+
+        $data = PiwigoModel::createReportFromAlbum($album_id, $comment);
+
+//        $photosDisplaySize = PiwigoModel::getAlbumPhotosDisplaySize($album_id);
+//
+//        $this->View->render($this->topicDirectory . '/editReport',
+//            [
+//                'subtitle' => $comment,
+//                'photosDisplaySize' => $photosDisplaySize,
+//                'photosFullSize' => PiwigoModel::getAlbumPhotos($album_id),
+//                'picIdsSelection' => PiwigoModel::getSelectedPhotos($photosDisplaySize)
+//            ]);
+
+        if (!empty($data)) $data = Lib\JsonHandler::decode($data, $assoc = true);
+
+        $this->View->render($this->topicDirectory . '/editReport', $data);
+    }
+
+    public function editReport($reportId = 0)
+    {
+        if ($reportId)
+        {
+            $data = TripReportsModel::getReportById($reportId);
+        } else {
+            $data = TripReportsModel::getReportByUrlAsJSON(URL::getPreviousUrl());
+        }
+
+        if (!empty($data)) $data = Lib\JsonHandler::decode($data, $assoc = true);
+
+        $this->View->render($this->topicDirectory . '/editReport', $data);
     }
 }

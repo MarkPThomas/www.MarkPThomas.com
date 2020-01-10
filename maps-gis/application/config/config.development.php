@@ -279,6 +279,10 @@ return array(
     'PUSHER_CHANNEL_NOTIFICATIONS' => 'notifications',
     'PUSHER_CHANNEL_EVENT' => 'new_user',
 
+    // ===================== reCAPTCHA =====================
+    'GOOGLE_RECAPTCHA' => '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
+    'GOOGLE_RECAPTCHA_SECRET' => '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe',
+
     // ===================== API YouTube =====================
     // Overall id: fluent-horizon-107804
 

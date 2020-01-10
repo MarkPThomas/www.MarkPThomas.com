@@ -49,4 +49,34 @@ class CaptchaModel
 
         return false;
     }
+
+    /**
+     * Checks if the entered captcha is the same like the one from the rendered image which has been saved in session.
+     * @param $captcha string The captcha characters
+     * @return bool success of captcha check
+     */
+    public static function checkGoogleReCaptchaV2($captcha)
+    {
+        if ($captcha) {
+            $secretKey = Config::get('GOOGLE_RECAPTCHA_SECRET');
+
+            // post request to server
+            $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) . '&response=' . urlencode($captcha);
+            $response = file_get_contents($url);
+            $responseKeys = json_decode($response, true);
+
+            // should return JSON with success as true
+            if ($responseKeys["success"]) {
+                //echo '<h2>Thanks for posting comment</h2><br />';
+                return true;
+            } else {
+                echo '<h2>You are spammer ! Get the @$%K out</h2><br />';
+                return false;
+            }
+        }
+        else{
+            //echo '<h2>CAPTCHA variable is empty.</h2><br />';
+            return false;
+        }
+    }
 }

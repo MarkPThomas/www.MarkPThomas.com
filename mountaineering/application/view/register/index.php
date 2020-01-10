@@ -34,15 +34,8 @@
                     <input type="password" class="form-control" name="user_password_repeat" pattern=".{6,}" required placeholder="Repeat password" autocomplete="off" />
                 </div>
             </div>
-            <label for="captcha">Captcha:</label>
-            <div class="form-group">
-                <!-- show the captcha by calling the login/showCaptcha-method in the src attribute of the img tag -->
-                <img id="captcha" src="<?= Config::get('URL'); ?>register/showCaptcha" class="imageSrc" />
-                <!-- quick & dirty captcha reloader -->
-                <a href="#" style="display: block; font-size: 11px; margin: 5px 0 15px 0; text-align: center"
-                   onclick="document.getElementById('captcha').src = '<?= Config::get('URL'); ?>register/showCaptcha?' + Math.random(); return false">Reload Captcha</a>
-                <input type="text" class="form-control" id="captcha" name="captcha" placeholder="Enter captcha above" required />
-            </div>
+            <!-- reCAPTCHA v2 -->
+            <div class="g-recaptcha" data-sitekey="<?= Config::get('GOOGLE_RECAPTCHA'); ?>"></div>
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>

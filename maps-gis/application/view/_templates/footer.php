@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <hr>
-                <p>Copyright &copy; 2018 by Mark Thomas</p>
+                <p>Copyright &copy; <?= date("Y"); ?> by Mark Thomas</p>
             </div>
             <!-- /.col-lg-12 -->
         </div>

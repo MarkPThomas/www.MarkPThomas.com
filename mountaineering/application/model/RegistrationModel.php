@@ -25,7 +25,8 @@ class RegistrationModel
         $user_password_repeat = Request::post('user_password_repeat');
 
         // stop registration flow if registrationInputValidation() returns false (= anything breaks the input check rules)
-        $validation_result = self::registrationInputValidation(Request::post('captcha'), $user_name, $user_password_new, $user_password_repeat, $user_email, $user_email_repeat);
+        $validation_result = self::registrationInputValidation(
+            Request::post('g-recaptcha-response'), $user_name, $user_password_new, $user_password_repeat, $user_email, $user_email_repeat);
         if (!$validation_result) {
             return false;
         }
@@ -34,7 +35,7 @@ class RegistrationModel
         // @see php.net/manual/en/function.password-hash.php for more, especially for potential options
         $user_password_hash = password_hash($user_password_new, PASSWORD_DEFAULT);
 
-        // make return a bool variable, so both errors can come up at once if needed
+        // make return a bool variable, so all errors can come up at once if needed
         $return = true;
 
         // check if username already exists
@@ -72,6 +73,17 @@ class RegistrationModel
         // send verification email
         if (self::sendVerificationEmail($user_id, $user_email, $user_activation_hash, $user_name)) {
             Session::add('feedback_positive', Text::get('FEEDBACK_ACCOUNT_SUCCESSFULLY_CREATED'));
+
+            // send admin notification email
+            $mail = new Mail;
+            $mail_sent = $mail->sendMail(
+                Config::get('EMAIL_WEBMASTER'),
+                $user_email,
+                $user_name,
+                'New User Registered for www.MarkPThomas.com/mountaineering',
+                'Please note that a new user has registered for www.MarkPThomas.com/mountaineering under the username ' & $user_name
+            );
+
             return true;
         }
 
@@ -84,7 +96,7 @@ class RegistrationModel
     /**
      * Validates the registration input.
      *
-     * @param $captcha
+     * @param $reCaptcha
      * @param $user_name
      * @param $user_password_new
      * @param $user_password_repeat
@@ -93,13 +105,19 @@ class RegistrationModel
      *
      * @return bool
      */
-    public static function registrationInputValidation($captcha, $user_name, $user_password_new, $user_password_repeat, $user_email, $user_email_repeat)
+    public static function registrationInputValidation($reCaptcha, $user_name, $user_password_new, $user_password_repeat, $user_email, $user_email_repeat)
     {
+        // make return a bool variable, so all errors can come up at once if needed
         $return = true;
 
         // perform all necessary checks
-        if (!CaptchaModel::checkCaptcha($captcha)) {
-            Session::add('feedback_negative', Text::get('FEEDBACK_CAPTCHA_WRONG'));
+        if (empty($reCaptcha)) {
+            Session::add('feedback_negative', Text::get('FEEDBACK_RECAPTCHA_UNCHECKED'));
+            return false;
+        }
+
+        if (!CaptchaModel::checkGoogleReCaptchaV2($reCaptcha)) {
+            Session::add('feedback_negative', Text::get('FEEDBACK_RECAPTCHA_WRONG'));
             $return = false;
         }
 

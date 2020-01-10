@@ -8,7 +8,6 @@
 
 namespace markpthomas\main;
 
-
 class ContactModel {
     /**
      * Sends a contact e-mail to the website administrator.
@@ -28,7 +27,7 @@ class ContactModel {
         $body = wordwrap($body, 70);
 
         // stop registration flow if registrationInputValidation() returns false (= anything breaks the input check rules)
-        $validation_result = self::contactInputValidation(Request::post('captcha'), $fromEmail, $fromName, $subject, $body);
+        $validation_result = self::contactInputValidation(Request::post('g-recaptcha-response'), $fromEmail, $fromName, $subject, $body);
         if (!$validation_result) {
             return false;
         }
@@ -41,22 +40,35 @@ class ContactModel {
     /**
      * Validates the contact input.
      *
-     * @param $captcha
+     * @param $reCaptcha
      * @param $fromEmail
      * @param $fromName
      * @param $subject
      * @param $body
      * @return bool
      */
-    public static function contactInputValidation($captcha, $fromEmail, $fromName, $subject, $body)
+    public static function contactInputValidation($reCaptcha, $fromEmail, $fromName, $subject, $body)
     {
+        // make return a bool variable, so all errors can come up at once if needed
         $return = true;
 
-        // perform all necessary checks
-        if (!CaptchaModel::checkCaptcha($captcha)) {
-            Session::add('feedback_negative', Text::get('FEEDBACK_CAPTCHA_WRONG'));
+        // Save form values in case of need of a page reload
+        Session::add('contact_name', $fromName);
+        Session::add('contact_email', $fromEmail);
+        Session::add('contact_subject', $subject);
+        Session::add('contact_body', $body);
+
+        // Google ReCAPTCHA v2
+        if (empty($reCaptcha)) {
+            Session::add('feedback_negative', Text::get('FEEDBACK_RECAPTCHA_UNCHECKED'));
+            return false;
+        }
+
+        if (!CaptchaModel::checkGoogleReCaptchaV2($reCaptcha)) {
+            Session::add('feedback_negative', Text::get('FEEDBACK_RECAPTCHA_WRONG'));
             $return = false;
         }
+
 
         // if username, email and password are all correctly validated, but make sure they all run on first submit
         if (DataValidator::validateUserEmail($fromEmail, $fromEmail) &&

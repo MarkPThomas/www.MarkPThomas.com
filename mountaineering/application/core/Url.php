@@ -25,4 +25,12 @@ class Url {
             return $url;
         }
     }
-} 
+
+    public static function getPreviousUrl(){
+        if(isset($_SERVER['HTTP_REFERER']))
+        {
+            return $_SERVER['HTTP_REFERER'];
+        }
+        return '';
+    }
+}

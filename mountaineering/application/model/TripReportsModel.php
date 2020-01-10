@@ -402,10 +402,22 @@ class TripReportsModel
     /**
      * Returns a trip report as a JSON string.
      * @param $pageUrl string URL used as a unique index for looking up the reports.
-     * @return array
+     * @return \stdClass|string
      */
     public static function getReportByUrlAsJSON($pageUrl){
         $report = self::getReportByUrl($pageUrl);
+        $jsonReport = $report->convertToStdClassView();
+        $jsonReport = Lib\JsonHandler::encode($jsonReport);
+        return $jsonReport;
+    }
+
+    /**
+     * Returns a trip report as a JSON string.
+     * @param $pageId int ID used as a unique index for looking up the reports.
+     * @return \stdClass|string
+     */
+    public static function getReportByIdAsJson($pageId){
+        $report = self::getReportById($pageId);
         $jsonReport = $report->convertToStdClassView();
         $jsonReport = Lib\JsonHandler::encode($jsonReport);
         return $jsonReport;
@@ -430,7 +442,7 @@ class TripReportsModel
 
     /**
      * Returns a report object based on the report ID.
-     * @param $reportId Report ID used to look up the report and associated page data.
+     * @param int $reportId Report ID used to look up the report and associated page data.
      * @return Report
      */
     public static function getReportById($reportId){
