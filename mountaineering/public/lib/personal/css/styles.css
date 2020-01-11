@@ -191,3 +191,17 @@ table {
     vertical-align:top;
     float:left;
 }
+
+/* For listing site logos vertically*/
+.site-logos-list {
+    margin-top: 14pt;
+}
+
+.site-logos-list>div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.site-logos-list>div>a>img {
+    height: 50px;
+}

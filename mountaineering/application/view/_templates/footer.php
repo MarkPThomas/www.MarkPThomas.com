@@ -1,11 +1,42 @@
 <?php namespace markpthomas\mountaineering; ?>
     </div>
     <!-- Footer -->
-    <footer>
-        <div class="row">
+    <footer class="footer">
+        <hr>
+        <div class="row footer-logo-cr">
             <div class="col-lg-12">
-                <hr>
-                <p>Copyright &copy; <?= date("Y"); ?> by Mark Thomas</p>
+                <div class="footer-content logo">
+                    <div class="footer-logo">
+                        <p>Copyright &copy; <?= date("Y"); ?> by Mark Thomas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sociallinks-footer">
+                 <a href="https://www.facebook.com/profile.php?id=1234350" target="_blank" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/facebook/facebook_icon.svg" alt="facebook logo">
+                 </a>
+                 <a href="https://www.instagram.com/pellucidwombato/" target="_blank" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/instagram/2993766 - instagram logo media social.png" alt="instagram logo">
+                 </a>
+                 <a href="https://twitter.com/PellucidWombat" target="_blank" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/twitter/twitter_icon.svg" alt="twitter logo">
+                 </a>
+                 <a href="https://www.youtube.com/channel/UCH8u_4I-6iRoFEZvEb52nlg" target="_blank" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/youTube/YouTube_social_red_squircle_(2017).svg" alt="youtube logo">
+                 </a>
+                <div class="social-icon-wrapper w-inline-block"></div>
+                <a href="https://www.mountainproject.com/user/106560803/mark-p-thomas" target="_blank" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/mountainProject/mountainProject_icon.png" alt="mountainProject logo">
+                </a>
+                <a href="https://www.summitpost.org/users/pellucidwombat/12893" target="_blank" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/summitPost/summitPost_icon.png" alt="summitPost logo">
+                </a>
+                <a href="http://www.supertopo.com/inc/view_profile.php?dcid=Pj44PTU-OSI," target="_blank" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/superTopo/superTopo_icon.png" alt="superTopo logo">
+                </a>
+                <a href="https://cascadeclimbers.com/forum/profile/30164-pellucidwombat/" target="_blank" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/cascadeClimbers/cascadeClimbers_icon.png" alt="cascadeClimbers logo">
+                </a>
             </div>
             <!-- /.col-lg-12 -->
         </div>

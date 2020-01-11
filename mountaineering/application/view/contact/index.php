@@ -9,25 +9,52 @@
             <div class="col-xs-4">
                 <img src="public/img/contact-profile.jpg" width="300"/>
             </div>
-            <div class="col-xs-8">
+            <div class="col-xs-5">
+                <p>Trad is rad, ice is nice, and alpine is divine.</p>
                 <p>Currently living in Draper, UT.</p>
+                <h4>Favorite Climbs</h4>
+                <p>
+                    Beckey-Chouinard <br/>
+                    Serenity-Sons & CPoF & Steck-Salathe <br/>
+                    SW Face - Mt Conness <br/>
+                    N Chimney - 3 Penguins <br/>
+                    Honeymoon Chimney - The Priest <br/>
+                    Palisade Crest Traverse <br/>
+                    Mithral Dihedral <br/>
+                    NWRR of Half Dome <br/>
+                    Ptarmigan & Liberty Ridges <br/>
+                    N Couloir - N Pk (AI2) <br/>
+                </p>
+                <h4>Other Interests</h4>
+                <p>Alpinism, photography, cycling, endurance rides/hikes/scrambles, whitewater, sea kayaking.</p>
 
-                <h2>Climbing Sites</h2>
-                <ul>
-                    <li><a href="http://www.supertopo.com/inc/view_profile.php?dcid=Pj44PTU-OSI,">SuperTopo</a></li>
-                    <li><a href="https://www.mountainproject.com/u/106560803">MountainProject</a></li>
-                    <li><a href="https://www.summitpost.org/users/pellucidwombat/12893">SummitPost</a></li>
-                    <li><a href="http://cascadeclimbers.com/forum/profile/30164-pellucidwombat/">CascadeClimbers</a></li>
-                </ul>
+                <h3>Climbing Site Profiles:</h3>
+                <a href="https://www.mountainproject.com/user/106560803/mark-p-thomas" target="_blank" title="MountainProject" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/mountainProject/mountainProject_icon.png" alt="mountainProject logo">
+                </a>
+                <a href="https://www.summitpost.org/users/pellucidwombat/12893" target="_blank" title="SummitPost" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/summitPost/summitPost_icon.png" alt="summitPost logo">
+                </a>
+                <a href="http://www.supertopo.com/inc/view_profile.php?dcid=Pj44PTU-OSI," target="_blank" title="SuperTopo" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/superTopo/superTopo_icon.png" alt="superTopo logo">
+                </a>
+                <a href="https://cascadeclimbers.com/forum/profile/30164-pellucidwombat/" target="_blank" title="CascadeClimbers" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/cascadeClimbers/cascadeClimbers_icon.png" alt="cascadeClimbers logo">
+                </a>
 
-                <h2>Contact Info</h2>
-                <ul>
-                    <li><a href="https://github.com/MarkPThomas">GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/mark-thomas-599b598">LinkedIn</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=1234350">Facebook</a></li>
-                    <li><a href="https://twitter.com/PellucidWombat">Twitter</a></li>
-                    <li><a href="https://www.instagram.com/pellucidwombato/">Instagram</a></li>
-                </ul>
+                <h3>Social Media Profiles:</h3>
+                <a href="https://www.facebook.com/profile.php?id=1234350" target="_blank" title="Facebook" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/facebook/facebook_icon.svg" alt="facebook logo">
+                </a>
+                <a href="https://www.instagram.com/pellucidwombato/" target="_blank" title="Instagram" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/instagram/2993766 - instagram logo media social.png" alt="instagram logo">
+                </a>
+                <a href="https://twitter.com/PellucidWombat" target="_blank" title="Twitter" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/twitter/twitter_icon.svg" alt="twitter logo">
+                </a>
+                <a href="https://www.youtube.com/channel/UCH8u_4I-6iRoFEZvEb52nlg" target="_blank" title="YouTube" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>public/img/icons/youTube/YouTube_social_red_squircle_(2017).svg" alt="youtube logo">
+                </a>
             </div>
         </div>
     </div>
