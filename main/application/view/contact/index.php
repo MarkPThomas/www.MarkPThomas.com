@@ -11,17 +11,36 @@
             </div>
             <div class="col-xs-5">
                 <p>Experienced Structural Engineer and Software Engineer with a demonstrated history of working in the structural engineering & computer software industry.
-                    Skilled in SAP2000, ETABS, WPF, C#, LaTeX, and HTML. Strong engineering professional with a M.Eng. focused in Structural Engineering from University of California, Berkeley.
-                    Also have a history of teaching various topics ranging from steel design to winter mountaineering and skiing.</p>
+                    Skilled in SAP2000, ETABS, WPF, C#, LaTeX, and HTML. </p>
+                <p>Strong engineering professional with a M.Eng. focused in Structural Engineering from University of California, Berkeley.</p>
+                <p>Bachelor's of Arts in Architecture also from University of California, Berkeley.</p>
+                <p>Also have a history of teaching various topics ranging from steel design to winter mountaineering and skiing.</p>
+                <p>Currently working remotely while living in Draper, UT</p>
 
-                <h2>Contact Info</h2>
-                <ul>
-                    <li><a href="https://github.com/MarkPThomas">GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/mark-thomas-599b598">LinkedIn</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=1234350">Facebook</a></li>
-                    <li><a href="https://twitter.com/PellucidWombat">Twitter</a></li>
-                    <li><a href="https://www.instagram.com/pellucidwombato/">Instagram</a></li>
-                </ul>
+                <h3>Social Media Profiles:</h3>
+                <a href="https://www.facebook.com/profile.php?id=1234350" target="_blank" title="Facebook" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>main/public/img/icons/facebook/facebook_icon.svg" alt="facebook logo">
+                </a>
+                <a href="https://www.instagram.com/pellucidwombato/" target="_blank" title="Instagram" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>main/public/img/icons/instagram/2993766 - instagram logo media social.png" alt="instagram logo">
+                </a>
+                <a href="https://twitter.com/PellucidWombat" target="_blank" title="Twitter" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>main/public/img/icons/twitter/twitter_icon.svg" alt="twitter logo">
+                </a>
+                <a href="https://www.youtube.com/channel/UCH8u_4I-6iRoFEZvEb52nlg" target="_blank" title="YouTube" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>main/public/img/icons/youTube/YouTube_social_red_squircle_(2017).svg" alt="youtube logo">
+                </a>
+
+                <h3>Professional Profiles:</h3>
+                <a href="https://www.linkedin.com/in/mark-thomas-599b598" target="_blank" title="LinkedIn" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>main/public/img/icons/linkedIn/linkedIn_icon.svg" alt="linkedIn logo">
+                </a>
+                <a href="https://github.com/MarkPThomas" target="_blank" title="GitHub" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>main/public/img/icons/gitHub/gitHub_icon.svg" alt="gitHub logo">
+                </a>
+                <a href="https://stackoverflow.com/users/3341503/pellucidwombat" target="_blank" title="Stack Overflow" class="social-icon-wrapper w-inline-block">
+                    <img src="<?= Config::get('URL'); ?>main/public/img/icons/stackOverflow/stackOverflow_icon.png" alt="stackOverflow logo">
+                </a>
             </div>
         </div>
     </div>
