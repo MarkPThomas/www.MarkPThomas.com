@@ -18,10 +18,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A webpage for my mountaineering-related activities, such as hiking, rock climbing, ice climbing, skiing, and snowshoeing.">
+    <meta name="title" content="<?= Config::get('HEADER_DEFAULT_TITLE'); ?>">
+    <meta name="subject" content="<?= Config::get('HEADER_DEFAULT_SUBJECT'); ?>">
+    <meta name="description" content="<?= Config::get('HEADER_DEFAULT_DESCRIPTION'); ?>">
+    <meta name="keywords" content="<?= PageModel::getHeaderKeywords($this); ?>">
     <meta name="author" content="Mark Thomas">
+    <meta name="copyright" content="Mark Thomas">
 
-    <title>Mountaineering</title>
+    <!-- Open Graph tags for social media sharing: -->
+    <!-- https://cypressnorth.com/social-media-advertising/how-to-customize-preview-thumbnail-images-for-pages-on-your-website/-->
+    <meta property="og:site_name" content="<?= Config::get('URL'); ?>"/>
+    <meta property="og:title" content="<?= PageModel::getHeaderTitle($this); ?>"/>
+    <meta property="og:description" content="<?= PageModel::getHeaderDescription($this); ?>"/>
+    <meta property="og:image" content="<?= PageModel::getHeaderImage($this); ?>">
+    <meta property="og:type" content="blog"/>
+
+    <title><?= Config::get('HEADER_DEFAULT_TITLE'); ?></title>
 
     <!--  Browser Icon  -->
     <link rel="shortcut icon" href="<?= Config::get('URL'); ?>favicon.ico" type="image/x-icon">

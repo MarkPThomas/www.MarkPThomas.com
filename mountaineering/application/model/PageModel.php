@@ -332,4 +332,87 @@ class PageModel {
         Session::add('feedback_negative', Text::get('FEEDBACK_PAGE_DELETION_FAILED'));
         return false;
     }
+
+    // =============== Header ===============
+    public static function getHeaderKeywords($pageData){
+        // 1. Get value from page data header
+        $headerKeywords = '';
+        // TODO: Add keywords to database
+
+        // 2. Append values to default values from config
+        $headerKeywords .= Config::get('HEADER_DEFAULT_KEYWORDS');
+
+        return $headerKeywords;
+    }
+
+    public static function getHeaderTitle($pageData){
+        // 1. Get value from page data header
+        $headerTitle = $pageData->header['page']['title_full'];
+
+        // 2. If not present, get default value from config
+        if ($headerTitle === null || $headerTitle === '') {
+            $headerTitle = Config::get('HEADER_DEFAULT_TITLE');
+        }
+
+        return $headerTitle;
+    }
+
+
+    public static function getHeaderDescription($pageData){
+        // 1. Get value from page data header
+        $headerDescription = $pageData->header['page']['description'];
+
+        // 2. If not present, get value from page data body
+        if ($headerDescription === null || $headerDescription === '') {
+            $bodies = $pageData->bodies;
+            $numberOfItems = count($bodies);
+            for ($i = 0; $i < $numberOfItems; $i++) {
+                $value = $bodies[$i]['text_body'];
+                if ($value !== null && $value !== '')
+                {
+                    $headerDescription = $value;
+                    break;
+                }
+            }
+        }
+
+        // 3. If not present, get default value from config
+        if ($headerDescription === null || $headerDescription === '') {
+            $headerDescription = Config::get('HEADER_DEFAULT_DESCRIPTION');
+        }
+
+        return $headerDescription;
+    }
+
+
+    public static function getHeaderImage($pageData){
+        // 1. Get value from page data header
+        $headerImage = $pageData->header['page']['photo']['url'];
+
+        // 2. If not present, get value from page data body
+        if ($headerImage === null || $headerImage === '') {
+            $bodies = $pageData->bodies;
+            $numberOfItems = count($bodies);
+            for ($i = 0; $i < $numberOfItems; $i++) {
+                $value = $bodies[$i]['report_photo']['photo']['url'];
+                if ($value !== null && $value !== '')
+                {
+                    $headerImage = $value;
+                    break;
+                }
+            }
+        }
+
+        // 3. If not present, get default value from config
+        if ($headerImage === null || $headerImage === '') {
+            $headerImage = Config::get('HEADER_DEFAULT_IMAGE');
+        }
+
+        if (substr($headerImage, 0, 4) !== 'http' && substr($headerImage, 0, 4) !== 'www.') {
+            $headerImage = Config::get('URL') . $headerImage;
+        }
+
+        return $headerImage;
+    }
+
 } 

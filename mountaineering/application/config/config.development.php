@@ -62,7 +62,14 @@ return array(
      */
     'DEFAULT_CONTROLLER' => 'home',
     'DEFAULT_ACTION' => 'index',
-    
+
+    // ===================== Header Defaults =====================
+    'HEADER_DEFAULT_TITLE' => 'Mountaineering',
+    'HEADER_DEFAULT_SUBJECT' => 'Mountaineering',
+    'HEADER_DEFAULT_KEYWORDS' => 'Mark Thomas, climbing, mountaineering, rock climbing, ice climbing, offwidth, artOfOffwidth, wide fetish',
+    'HEADER_DEFAULT_DESCRIPTION' => 'A webpage for my mountaineering-related activities, such as hiking, rock climbing, ice climbing, skiing, and snowshoeing.',
+    'HEADER_DEFAULT_IMAGE' => 'favicon-32x32.png',
+
     // ===================== Database ===================== 
     /**
      * Configuration for: Database (Default)
