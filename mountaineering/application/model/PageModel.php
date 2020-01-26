@@ -347,7 +347,10 @@ class PageModel {
 
     public static function getHeaderTitle($pageData){
         // 1. Get value from page data header
-        $headerTitle = $pageData->header['page']['title_full'];
+        $headerTitle = null;
+        if ($pageData !== null && isset($pageData->header)) {
+            $headerTitle = $pageData->header['page']['title_full'];
+        }
 
         // 2. If not present, get default value from config
         if ($headerTitle === null || $headerTitle === '') {
@@ -360,10 +363,13 @@ class PageModel {
 
     public static function getHeaderDescription($pageData){
         // 1. Get value from page data header
-        $headerDescription = $pageData->header['page']['description'];
+        $headerDescription = null;
+        if ($pageData !== null && isset($pageData->header)) {
+            $headerDescription = $pageData->header['page']['description'];
+        }
 
         // 2. If not present, get value from page data body
-        if ($headerDescription === null || $headerDescription === '') {
+        if (($headerDescription === null || $headerDescription === '') && isset($pageData->bodies)) {
             $bodies = $pageData->bodies;
             $numberOfItems = count($bodies);
             for ($i = 0; $i < $numberOfItems; $i++) {
@@ -387,10 +393,13 @@ class PageModel {
 
     public static function getHeaderImage($pageData){
         // 1. Get value from page data header
-        $headerImage = $pageData->header['page']['photo']['url'];
+        $headerImage = null;
+        if ($pageData !== null && isset($pageData->header)) {
+            $headerImage = $pageData->header['page']['photo']['url'];
+        }
 
         // 2. If not present, get value from page data body
-        if ($headerImage === null || $headerImage === '') {
+        if (($headerImage === null || $headerImage === '') && isset($pageData->bodies)) {
             $bodies = $pageData->bodies;
             $numberOfItems = count($bodies);
             for ($i = 0; $i < $numberOfItems; $i++) {
