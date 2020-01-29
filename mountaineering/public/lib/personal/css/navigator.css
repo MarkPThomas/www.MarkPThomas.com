@@ -9,6 +9,12 @@ body {
 }
 
 
+/* Side Bar */
+/*.well {*/
+    /*display: flex;*/
+    /*flex-direction: column-reverse;*/
+/*}*/
+
 /* footer */
 
 footer {

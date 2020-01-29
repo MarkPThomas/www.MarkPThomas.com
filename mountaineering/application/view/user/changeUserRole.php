@@ -1,5 +1,5 @@
 <?php namespace markpthomas\mountaineering; ?>
-<div class="col-md-9">
+<div class="col-md-9 col-md-push-3">
     <h1>UserController/changeUserRole</h1>
 
     <!-- echo out the system feedback (error and success messages) -->

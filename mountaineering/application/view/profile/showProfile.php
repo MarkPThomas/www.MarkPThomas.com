@@ -1,5 +1,5 @@
 <?php namespace markpthomas\mountaineering; ?>
-<div class="col-md-9">
+<div class="col-md-9 col-md-push-3">
     <h1>ProfileController/showProfile/:id</h1>
     <div class="box">
 

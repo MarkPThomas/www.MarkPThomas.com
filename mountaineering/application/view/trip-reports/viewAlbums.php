@@ -1,5 +1,5 @@
 <?php namespace markpthomas\mountaineering; ?>
-<div class="col-md-9">
+<div class="col-md-9 col-md-push-3">
     <h1 class="page-header">Photo Albums</h1>
     <!-- TODO: Make control to sort page alphabetically vs. by date -->
     <?php if (!empty($this->albums)) { ?>

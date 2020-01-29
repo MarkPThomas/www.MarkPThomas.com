@@ -31,6 +31,7 @@ class View
 
         $this->loadHeadersAndNavigation($fileName);
         require Config::get('PATH_VIEW') . $fileName . '.php';
+        $this->loadSidebar();
         $this->loadFooter();
     }
 
@@ -207,7 +208,7 @@ class View
         // Load view
         $this->loadHeader();
         $this->loadNavigation();
-        $this->loadSidebar();
+//        $this->loadSidebar();
     }
 
     protected function loadHeader(){

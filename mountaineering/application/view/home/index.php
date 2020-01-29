@@ -1,5 +1,5 @@
 <?php namespace markpthomas\mountaineering; ?>
-<div class="col-md-9">
+<div class="col-md-9 col-md-push-3">
     <h1 class="page-header">Mountaineering</h1>
     <?php $this->renderFeedbackMessages(); ?>
     <p>This is my website for all mountaineering-related things.</p>
@@ -20,13 +20,7 @@
     So stay tuned...</p>
 
     Websites that I will be syncing with my site are:
-<!--    <ul>-->
-<!--        <li><a href="http://www.summitpost.com">SummitPost</a></li>-->
-<!--        <li><a href="http://www.supertopo.com">SuperTopo</a></li>-->
-<!--        <li><a href="http://www.mountainproject.com">MountainProject</a></li>-->
-<!--    </ul>-->
     <div class="container site-logos-list">
-<!--        <div class="row mt-2">-->
             <div>
                 <a href="https://www.mountainproject.com" target="_blank" title="MountainProject">
                     <img src="<?= Config::get('URL'); ?>public/img/icons/mountainProject/mountainProject_Logo.svg" alt="mountainProject logo">
@@ -42,7 +36,6 @@
                     <img src="<?= Config::get('URL'); ?>public/img/icons/superTopo/superTopo_Logo.gif" alt="superTopo logo">
                 </a>
             </div>
-<!--        </div>-->
     </div>
 
     <h2>Current State</h2>

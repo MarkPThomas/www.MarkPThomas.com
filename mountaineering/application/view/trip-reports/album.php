@@ -1,5 +1,5 @@
 <?php namespace markpthomas\mountaineering; ?>
-<div class="col-md-9">
+<div class="col-md-9 col-md-push-3">
     <h1 class="page-header"><?= $this->album_title; ?></h1>
     <?php
     // TODO: Work out method of adding multiple albums. Perhaps post returns to 'viewAlbums'?

@@ -2,7 +2,7 @@
 namespace markpthomas\mountaineering;
 require_once(Config::get('PATH_VIEW') . '_controls/Form.php');
 ?>
-<div class="col-md-9">
+<div class="col-md-9 col-md-push-3">
     <h1>Edit your avatar</h1>
 
     <!-- echo out the system feedback (error and success messages) -->
