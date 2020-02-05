@@ -6,10 +6,10 @@
     <h1 class="page-header">Mark P. Thomas</h1>
     <div class="container">
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-md-4">
                 <img src="public/img/contact-profile.jpg" width="300"/>
             </div>
-            <div class="col-xs-5">
+            <div class="col-md-5">
                 <p>Trad is rad, ice is nice, and alpine is divine.</p>
                 <p>Currently living in Draper, UT.</p>
                 <h4>Favorite Climbs</h4>
@@ -59,8 +59,8 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col-xs-offset-1">
+        <div class="row contact-form">
+            <div class="col-md-6 col-md-offset-1">
                 <hr>
                 <div class="form-wrap">
                     <h1>Contact</h1>
@@ -139,7 +139,6 @@
                         <br />
                         <input type="submit" name="submit" id="btn-login" class="btn btn-primary" value="Submit">
                     </form>
-
                 </div>
             </div> <!-- /.col-xs-12 -->
         </div> <!-- /.row -->

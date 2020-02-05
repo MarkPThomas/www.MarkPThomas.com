@@ -6,10 +6,10 @@
     <h1 class="page-header">Mark P. Thomas</h1>
     <div class="container">
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-md-4">
                 <img src="main/public/img/contact-profile.png" width="300"/>
             </div>
-            <div class="col-xs-5">
+            <div class="col-md-5">
                 <p>Experienced Structural Engineer and Software Engineer with a demonstrated history of working in the structural engineering & computer software industry.
                     Skilled in SAP2000, ETABS, WPF, C#, LaTeX, and HTML. </p>
                 <p>Strong engineering professional with a M.Eng. focused in Structural Engineering from University of California, Berkeley.</p>
@@ -45,8 +45,8 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col-xs-offset-1">
+        <div class="row contact-form">
+            <div class="col-md-6 col-md-offset-1">
                 <hr>
                 <div class="form-wrap">
                     <h1>Contact</h1>

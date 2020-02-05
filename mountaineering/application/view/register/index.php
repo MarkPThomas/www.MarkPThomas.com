@@ -36,6 +36,7 @@
             </div>
             <!-- reCAPTCHA v2 -->
             <div class="g-recaptcha" data-sitekey="<?= Config::get('GOOGLE_RECAPTCHA'); ?>"></div>
+            <br />
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>

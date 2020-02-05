@@ -62,6 +62,11 @@ hr.hr-scissors:after {
     font-size: 18px;
 }
 
+.contact-form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 /* Trip Report Elements k*/
 .imageGroup, .videoGroup {
     padding: 20px;
