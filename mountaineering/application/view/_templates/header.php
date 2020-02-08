@@ -30,7 +30,7 @@
     <meta property="og:site_name" content="<?= Config::get('URL'); ?>"/>
     <meta property="og:title" content="<?= PageModel::getHeaderTitle($this); ?>"/>
     <meta property="og:description" content="<?= PageModel::getHeaderDescription($this); ?>"/>
-    <meta property="og:image" content="<?= PageModel::getHeaderImage($this); ?>">
+    <meta property="og:image" content="<?= PageModel::getHeaderImage($this); ?>"/>
     <meta property="og:type" content="blog"/>
 
     <title><?= Config::get('HEADER_DEFAULT_TITLE'); ?></title>

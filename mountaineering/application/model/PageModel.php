@@ -374,7 +374,8 @@ class PageModel {
             $numberOfItems = count($bodies);
             for ($i = 0; $i < $numberOfItems; $i++) {
                 $value = $bodies[$i]['text_body'];
-                if ($value !== null && $value !== '')
+                // If value is not empty and not HTML, use it.
+                if ($value !== null && $value !== '' && $value[0] != '<')
                 {
                     $headerDescription = $value;
                     break;
