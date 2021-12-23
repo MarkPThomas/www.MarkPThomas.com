@@ -3,8 +3,7 @@ This is a new website I am building with multiple sub-sites that serve a variety
 
 For now I am starting with building the site using the LAMP stack and MVC pattern, but later on I plan to add in Angular on the front end.
 
-Sub-Sites
-====
+## Sub-Sites
 
 Current sections include:
 
@@ -17,3 +16,6 @@ Current sections include:
 - Paddling
 - Photography
 - Training
+
+## Tools
+The MVC structure was extended from an excellent public repo at [https://github.com/kevinisaac/php-mvc](https://github.com/kevinisaac/php-mvc).
